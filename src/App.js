@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import UserProfile from "./components/UserProfile";
+import MusicUpload from "./components/MusicUpload";
+import MusicList from "./components/MusicList";
+import LastUploadedMusic from "./components/LastUploadedMusic";
+import EditProfile from "./components/EditProfile";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div style={{ textAlign: "left" }}>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<UserProfile />} />
+          <Route path="/upload" element={<MusicUpload />} />
+          <Route path="/music-list" element={<MusicList />} />
+          <Route path="/last-uploaded" element={<LastUploadedMusic />} />
+          <Route path="/edit-profile" element={<EditProfile />} />
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
