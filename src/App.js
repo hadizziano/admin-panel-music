@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import UserProfile from "./components/UserProfile";
@@ -8,16 +8,40 @@ import LastUploadedMusic from "./components/LastUploadedMusic";
 import EditProfile from "./components/EditProfile";
 
 const App = () => {
+  // State to store user information
+  const [user, setUser] = useState({
+    name: "John Doe",
+    picture: "path-to-user-picture.jpg",
+  });
+
+  // Fetch user information here (e.g., from an API)
+  useEffect(() => {
+    // Simulating a fetch request
+    // Replace this with actual API call to fetch user data
+    // For example, you can use Axios or fetch API
+    setTimeout(() => {
+      setUser({
+        name: "John Doe",
+        picture: "path-to-user-picture.jpg",
+      });
+    }, 1000); // Simulating a delay of 1 second
+  }, []);
+
   return (
     <Router>
       <div style={{ textAlign: "left" }}>
-        <Navbar />
+        {/* Pass user information to Navbar */}
+        <Navbar user={user} />
         <Routes>
-          <Route path="/" element={<UserProfile />} />
-          <Route path="/upload" element={<MusicUpload />} />
-          <Route path="/music-list" element={<MusicList />} />
-          <Route path="/last-uploaded" element={<LastUploadedMusic />} />
-          <Route path="/edit-profile" element={<EditProfile />} />
+          {/* Pass user information to child components */}
+          <Route path="/" element={<UserProfile user={user} />} />
+          <Route path="/upload" element={<MusicUpload user={user} />} />
+          <Route path="/music-list" element={<MusicList user={user} />} />
+          <Route
+            path="/last-uploaded"
+            element={<LastUploadedMusic user={user} />}
+          />
+          <Route path="/edit-profile" element={<EditProfile user={user} />} />
         </Routes>
       </div>
     </Router>
