@@ -4,7 +4,7 @@ const UserProfile = () => {
   // Fetch user information here (e.g., picture, name)
   const user = {
     name: "John Doe",
-    picture: "path-to-user-picture.jpg",
+    picture: "profilepic.jpg",
   };
 
   return (

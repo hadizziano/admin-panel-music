@@ -6,6 +6,8 @@ import MusicUpload from "./components/MusicUpload";
 import MusicList from "./components/MusicList";
 import LastUploadedMusic from "./components/LastUploadedMusic";
 import EditProfile from "./components/EditProfile";
+import UserPanel from "./components/UserPanel"; // Add this import
+import "./App.css";
 
 const App = () => {
   // State to store user information
@@ -22,27 +24,31 @@ const App = () => {
     setTimeout(() => {
       setUser({
         name: "John Doe",
-        picture: "path-to-user-picture.jpg",
+        picture: "./profilepic.jpg",
       });
     }, 1000); // Simulating a delay of 1 second
   }, []);
 
   return (
     <Router>
-      <div style={{ textAlign: "left" }}>
-        {/* Pass user information to Navbar */}
-        <Navbar user={user} />
-        <Routes>
-          {/* Pass user information to child components */}
-          <Route path="/" element={<UserProfile user={user} />} />
-          <Route path="/upload" element={<MusicUpload user={user} />} />
-          <Route path="/music-list" element={<MusicList user={user} />} />
-          <Route
-            path="/last-uploaded"
-            element={<LastUploadedMusic user={user} />}
-          />
-          <Route path="/edit-profile" element={<EditProfile user={user} />} />
-        </Routes>
+      <div style={{ display: "flex" }}>
+        {/* User Panel */}
+        <UserPanel user={user} />
+
+        {/* Main Content */}
+        <div style={{ flex: 1, textAlign: "left" }}>
+          <Navbar user={user} />
+          <Routes>
+            <Route path="/" element={<UserProfile user={user} />} />
+            <Route path="/upload" element={<MusicUpload user={user} />} />
+            <Route path="/music-list" element={<MusicList user={user} />} />
+            <Route
+              path="/last-uploaded"
+              element={<LastUploadedMusic user={user} />}
+            />
+            <Route path="/edit-profile" element={<EditProfile user={user} />} />
+          </Routes>
+        </div>
       </div>
     </Router>
   );

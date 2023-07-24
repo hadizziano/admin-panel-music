@@ -51,14 +51,7 @@ const Navbar = ({ user }) => {
         </li>
       </ul>
       {/* Display user information */}
-      <div>
-        <img
-          src={user.picture}
-          alt="User"
-          style={{ width: "40px", height: "40px", borderRadius: "50%" }}
-        />
-        <span style={{ marginLeft: "1rem" }}>{user.name}</span>
-      </div>
+      <div></div>
     </nav>
   );
 };
