@@ -24,6 +24,34 @@ const MusicList = () => {
       genre: "Hip Hop",
       audioSrc: "./track.mp3", // Replace with the actual audio file path
     },
+    {
+      id: 3,
+      title: "Song Title 3",
+      artist: "Artist 3",
+      genre: "Hip Hop",
+      audioSrc: "./track.mp3", // Replace with the actual audio file path
+    },
+    {
+      id: 3,
+      title: "Song Title 3",
+      artist: "Artist 3",
+      genre: "Hip Hop",
+      audioSrc: "./track.mp3", // Replace with the actual audio file path
+    },
+    {
+      id: 3,
+      title: "Song Title 3",
+      artist: "Artist 3",
+      genre: "Hip Hop",
+      audioSrc: "./track.mp3", // Replace with the actual audio file path
+    },
+    {
+      id: 3,
+      title: "Song Title 3",
+      artist: "Artist 3",
+      genre: "Hip Hop",
+      audioSrc: "./track.mp3", // Replace with the actual audio file path
+    },
     // Add more music objects as needed
   ];
 
