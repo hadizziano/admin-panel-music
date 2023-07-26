@@ -1,5 +1,5 @@
 import React from "react";
-import { FaMusic } from "react-icons/fa";
+import MusicItem from "./MusicItem";
 
 const MusicList = () => {
   const musicList = [
@@ -8,18 +8,21 @@ const MusicList = () => {
       title: "Song Title 1",
       artist: "Artist 1",
       genre: "Pop",
+      audioSrc: "./track.mp3", // Replace with the actual audio file path
     },
     {
       id: 2,
       title: "Song Title 2",
       artist: "Artist 2",
       genre: "Rock",
+      audioSrc: "./track.mp3", // Replace with the actual audio file path
     },
     {
       id: 3,
       title: "Song Title 3",
       artist: "Artist 3",
       genre: "Hip Hop",
+      audioSrc: "./track.mp3", // Replace with the actual audio file path
     },
     // Add more music objects as needed
   ];
@@ -36,28 +39,7 @@ const MusicList = () => {
       <h2 style={{ marginBottom: "1rem" }}>Music List</h2>
       <ul style={{ listStyle: "none", padding: 0 }}>
         {musicList.map((music) => (
-          <li
-            key={music.id}
-            style={{
-              marginBottom: "0.5rem",
-              borderBottom: "1px solid #445566",
-              paddingBottom: "0.5rem",
-            }}
-          >
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <FaMusic size={20} style={{ marginRight: "0.5rem" }} />
-              <strong>{music.title}</strong>
-            </div>
-            <p>
-              <span style={{ marginRight: "1rem" }}>Artist:</span>
-              {music.artist}
-            </p>
-            <p>
-              <span style={{ marginRight: "1rem" }}>Genre:</span>
-              {music.genre}
-            </p>
-            {/* Add more details about the music */}
-          </li>
+          <MusicItem key={music.id} music={music} />
         ))}
       </ul>
     </div>
