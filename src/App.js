@@ -12,7 +12,7 @@ import "./App.css";
 const App = () => {
   // State to store user information
   const [user, setUser] = useState({
-    name: "John Doe",
+    name: "Hadi Masoumi",
     picture: "path-to-user-picture.jpg",
   });
 
@@ -23,7 +23,7 @@ const App = () => {
     // For example, you can use Axios or fetch API
     setTimeout(() => {
       setUser({
-        name: "John Doe",
+        name: "Hadi Masoumi",
         picture: "./profilepic.jpg",
       });
     }, 1000); // Simulating a delay of 1 second
