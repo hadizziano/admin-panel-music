@@ -1,6 +1,6 @@
 import React from "react";
 import { FaMusic, FaGuitar, FaMicrophone, FaEdit } from "react-icons/fa";
-
+import { Link } from "react-router-dom";
 const UserProfile = () => {
   return (
     <div
@@ -23,8 +23,10 @@ const UserProfile = () => {
         </h3>
         <ul style={{ listStyle: "none", padding: 0 }}>
           <li style={{ marginBottom: "1rem" }}>
-            <FaMusic size={40} color="#ff5722" />
-            <p style={{ color: "#ffffff" }}>Piano Stuff</p>
+            <Link to="pianoPage">
+              <FaMusic size={40} color="#ff5722" />
+              <p style={{ color: "#ffffff" }}>Piano Stuff</p>
+            </Link>
           </li>
           <li style={{ marginBottom: "1rem" }}>
             <FaGuitar size={40} color="#03a9f4" />
