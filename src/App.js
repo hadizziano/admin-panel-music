@@ -8,6 +8,7 @@ import LastUploadedMusic from "./components/LastUploadedMusic";
 import EditProfile from "./components/EditProfile";
 import UserPanel from "./components/UserPanel"; // Add this import
 import "./App.css";
+import PianoPage from "./components/PianoPage";
 
 const App = () => {
   // State to store user information
@@ -42,6 +43,7 @@ const App = () => {
             <Route path="/" element={<UserProfile user={user} />} />
             <Route path="/upload" element={<MusicUpload user={user} />} />
             <Route path="/music-list" element={<MusicList user={user} />} />
+            <Route path="/PianoPage" element={<PianoPage user={user} />} />
             <Route
               path="/last-uploaded"
               element={<LastUploadedMusic user={user} />}
