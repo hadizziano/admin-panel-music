@@ -58,7 +58,8 @@ const MusicList = () => {
   return (
     <div
       style={{
-        backgroundColor: "#223344",
+        // backgroundColor: "#223344",
+        background: "linear-gradient(to left, #9D5842 , #223344 ) right",
         padding: "1rem",
         color: "white",
         borderRadius: "8px",

@@ -125,7 +125,7 @@ const Piano = () => {
   };
 
   return (
-    <div>
+    <div style={{ color: "white" }}>
       <h1>Piano Stuff</h1>
       <p>Click the piano keys or use keyboard buttons to play:</p>
       <div style={{ display: "flex", justifyContent: "center" }}>

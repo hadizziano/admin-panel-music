@@ -1,0 +1,27 @@
+input[type="file"]::file-selector-button {
+  margin-right: 20px;
+  border: none;
+  background: #ff8800;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+  height: 30px;
+}
+
+.musicinput {
+  width: 50%;
+  height: 30px;
+  background: none;
+  margin-bottom: 10px;
+  border: solid 1px gray;
+  border-radius: 10px;
+}
+
+.submitbutton {
+  width: 50%;
+  height: 30px;
+  background: rgb(33, 193, 214);
+  border-radius: 10px;
+}

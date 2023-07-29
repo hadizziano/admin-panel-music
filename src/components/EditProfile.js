@@ -112,7 +112,7 @@ const EditProfile = ({ user }) => {
             type="text"
             value={userName}
             onChange={handleUserNameChange}
-            style={inputStyles}
+            className="musicinput"
             placeholder="User Name"
           />
         </label>
@@ -122,7 +122,7 @@ const EditProfile = ({ user }) => {
             type="email"
             value={email}
             onChange={handleEmailChange}
-            style={inputStyles}
+            className="musicinput"
             placeholder="Email"
           />
         </label>
@@ -132,11 +132,11 @@ const EditProfile = ({ user }) => {
             type="number"
             value={age}
             onChange={handleAgeChange}
-            style={inputStyles}
+            className="musicinput"
             placeholder="Age"
           />
         </label>
-        <button onClick={handleSave} style={buttonStyles}>
+        <button onClick={handleSave} className="submitbutton">
           Save
         </button>
       </form>
