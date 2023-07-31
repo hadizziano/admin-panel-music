@@ -1,7 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 const Navbar = ({ user }) => {
+  const [underlined, setUnderlined] = useState([
+    true,
+    false,
+    false,
+    false,
+    false,
+  ]);
+  const handleunderline = (indexed) => {
+    const newArray = [...underlined];
+    newArray.forEach((item, index) => {
+      if (index === indexed) {
+        newArray[index] = true;
+      } else newArray[index] = false;
+      // alert("hi");
+    });
+    setUnderlined(newArray);
+  };
   return (
     <nav
       style={{ backgroundColor: "#223344", padding: "1rem", color: "white" }}
@@ -15,36 +32,58 @@ const Navbar = ({ user }) => {
           padding: "0.5rem",
         }}
       >
-        <li>
+        <li onClick={() => handleunderline(0)}>
           <Link to="/" className="linklayers">
-            Home
+            <span
+              style={{
+                textDecoration: underlined[0] ? "underline" : "none",
+                color: underlined[0] ? "#FF9B00" : " white",
+              }}
+            >
+              Home
+            </span>
           </Link>
         </li>
-        <li>
-          <Link to="/upload" style={{ color: "white", textDecoration: "none" }}>
+        <li onClick={() => handleunderline(1)}>
+          <Link
+            to="/upload"
+            style={{
+              textDecoration: underlined[1] ? "underline" : "none",
+              color: underlined[1] ? "#FF9B00" : " white",
+            }}
+          >
             Upload Music
           </Link>
         </li>
-        <li>
+        <li onClick={() => handleunderline(2)}>
           <Link
             to="/music-list"
-            style={{ color: "white", textDecoration: "none" }}
+            style={{
+              textDecoration: underlined[2] ? "underline" : "none",
+              color: underlined[2] ? "#FF9B00" : " white",
+            }}
           >
             View Music List
           </Link>
         </li>
-        <li>
+        <li onClick={() => handleunderline(3)}>
           <Link
             to="/last-uploaded"
-            style={{ color: "white", textDecoration: "none" }}
+            style={{
+              textDecoration: underlined[3] ? "underline" : "none",
+              color: underlined[3] ? "#FF9B00" : " white",
+            }}
           >
             Last Uploaded
           </Link>
         </li>
-        <li>
+        <li onClick={() => handleunderline(4)}>
           <Link
             to="/edit-profile"
-            style={{ color: "white", textDecoration: "none" }}
+            style={{
+              textDecoration: underlined[4] ? "underline" : "none",
+              color: underlined[4] ? "#FF9B00" : " white",
+            }}
           >
             Edit Profile
           </Link>
