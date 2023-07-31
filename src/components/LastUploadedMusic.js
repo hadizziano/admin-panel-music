@@ -1,34 +1,78 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
+import MusicItem from "./MusicItem";
 
-const LastUploadedMusic = () => {
-  const [lastUploaded, setLastUploaded] = useState(null);
-
-  useEffect(() => {
-    // Fetch the last uploaded music by other users from the backend
-    axios
-      .get("/api/last-uploaded")
-      .then((response) => {
-        setLastUploaded(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching last uploaded music:", error);
-      });
-  }, []);
+const LastUploaded = () => {
+  const musicList = [
+    {
+      id: 1,
+      title: "Song Title 1",
+      artist: "Artist 1",
+      genre: "Pop",
+      audioSrc: "./track.mp3", // Replace with the actual audio file path
+    },
+    {
+      id: 2,
+      title: "Song Title 2",
+      artist: "Artist 2",
+      genre: "Rock",
+      audioSrc: "./track.mp3", // Replace with the actual audio file path
+    },
+    {
+      id: 3,
+      title: "Song Title 3",
+      artist: "Artist 3",
+      genre: "Hip Hop",
+      audioSrc: "./track.mp3", // Replace with the actual audio file path
+    },
+    {
+      id: 3,
+      title: "Song Title 3",
+      artist: "Artist 3",
+      genre: "Hip Hop",
+      audioSrc: "./track.mp3", // Replace with the actual audio file path
+    },
+    {
+      id: 3,
+      title: "Song Title 3",
+      artist: "Artist 3",
+      genre: "Hip Hop",
+      audioSrc: "./track.mp3", // Replace with the actual audio file path
+    },
+    {
+      id: 3,
+      title: "Song Title 3",
+      artist: "Artist 3",
+      genre: "Hip Hop",
+      audioSrc: "./track.mp3", // Replace with the actual audio file path
+    },
+    {
+      id: 3,
+      title: "Song Title 3",
+      artist: "Artist 3",
+      genre: "Hip Hop",
+      audioSrc: "./track.mp3", // Replace with the actual audio file path
+    },
+    // Add more music objects as needed
+  ];
 
   return (
     <div
-      style={{ backgroundColor: "#334455", padding: "1rem", color: "white" }}
+      style={{
+        // backgroundColor: "#223344",
+        background: "linear-gradient(to left, #3FE0E7 , #223344 ) right",
+        padding: "1rem",
+        color: "white",
+        borderRadius: "8px",
+      }}
     >
-      <h2>Last Uploaded Music</h2>
-      {lastUploaded && (
-        <div>
-          <img src={lastUploaded.picture} alt="Last Uploaded" />
-          <h3>{lastUploaded.name}</h3>
-        </div>
-      )}
+      <h2 style={{ marginBottom: "1rem" }}>Music List</h2>
+      <ul style={{ listStyle: "none", padding: 0 }}>
+        {musicList.map((music) => (
+          <MusicItem key={music.id} music={music} />
+        ))}
+      </ul>
     </div>
   );
 };
 
-export default LastUploadedMusic;
+export default LastUploaded;
