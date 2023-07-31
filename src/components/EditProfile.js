@@ -107,17 +107,15 @@ const EditProfile = ({ user }) => {
         }}
       >
         <label style={{ display: "grid" }}>
-          User Name:
           <input
             type="text"
             value={userName}
             onChange={handleUserNameChange}
             className="musicinput"
-            placeholder="User Name"
+            placeholder={userName}
           />
         </label>
         <label style={{ display: "grid" }}>
-          Email:
           <input
             type="email"
             value={email}
@@ -127,7 +125,6 @@ const EditProfile = ({ user }) => {
           />
         </label>
         <label style={{ display: "grid" }}>
-          Age:
           <input
             type="number"
             value={age}

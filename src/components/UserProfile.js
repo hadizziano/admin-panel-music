@@ -6,10 +6,9 @@ const UserProfile = () => {
     <div
       style={{
         display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+
         height: "100vh",
-        backgroundColor: "#282c34",
+        background: "linear-gradient(to left, #1f56a0 , #223344 ) right",
       }}
     >
       <div
@@ -18,9 +17,7 @@ const UserProfile = () => {
         <h1 style={{ color: "#ffffff", marginBottom: "1rem" }}>
           Welcome to Your Profile
         </h1>
-        <h3 style={{ color: "#ffffff", marginBottom: "2rem" }}>
-          Explore Your Music Journey
-        </h3>
+
         <ul style={{ listStyle: "none", padding: 0 }}>
           <li style={{ marginBottom: "1rem" }}>
             <Link to="pianoPage">

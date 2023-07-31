@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import "./Navbar.css";
 const Navbar = ({ user }) => {
   return (
     <nav
@@ -16,7 +16,7 @@ const Navbar = ({ user }) => {
         }}
       >
         <li>
-          <Link to="/" style={{ color: "white", textDecoration: "none" }}>
+          <Link to="/" className="linklayers">
             Home
           </Link>
         </li>
